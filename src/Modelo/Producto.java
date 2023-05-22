@@ -1,17 +1,17 @@
 
-package tienda;
+package Modelo;
 
 
 public class Producto {
     
     //ATRIBUTOS
     
-    public int codeP, cantidadP;
-    public String descriP, unidadMedida;
-    public double precioC, precioV;
+    public int  cantidadP;
+    public String codeP,descriP, unidadMedida;
+    public float precioC, precioV;
     
     //CAPTURAR DATOS
-    public Producto(int cod, String des, String uniM, double preC, double preV, int canP ){
+    public Producto(String cod, String des, String uniM, float preC, float preV, int canP ){
         
         this.codeP = cod;
         this.descriP = des;
@@ -24,7 +24,7 @@ public class Producto {
     //CLASE VACIA
     public Producto(){
         
-        this.codeP = 0;
+        this.codeP = "";
         this.descriP = "";
         this.unidadMedida = "";
         this.precioC = 0;
@@ -44,7 +44,7 @@ public class Producto {
     }
     
     //SET
-    public void setCodeP(int cod){
+    public void setCodeP(String cod){
         
         this.codeP = cod;
     }
@@ -59,12 +59,12 @@ public class Producto {
         this.unidadMedida = uniM;  
     }
     
-    public void setPrecioCompra(double preC){
+    public void setPrecioCompra(float preC){
         
         this.precioC = preC;
     }
     
-    public void setPrecioVenta(double preV){
+    public void setPrecioVenta(float preV){
         
         this.precioV = preV;  
     }
@@ -76,7 +76,7 @@ public class Producto {
     
     
     //GET
-    public int getCodeP(){
+    public String getCodeP(){
         
         return codeP;
     }
@@ -91,12 +91,12 @@ public class Producto {
         return unidadMedida;
     }
     
-    public double getPrecioCompra(){
+    public float getPrecioCompra(){
         
         return precioC;
     }
     
-    public double getPrecioVenta(){
+    public float getPrecioVenta(){
         
         return precioV;
     }
@@ -108,20 +108,20 @@ public class Producto {
     
     
     //COMPRA
-    public double calculaCompra(){
+    public float calculaCompra(){
         
         return (getCantidadP() * getPrecioCompra());
     }
     
     
     //VENTA
-    public double calcularVenta(){
+    public float calcularVenta(){
         
         return (getCantidadP() * getPrecioVenta());
     }
     
     //GANANCIA
-    public double calcularGanancia(){
+    public float calcularGanancia(){
         
         return (calcularVenta()-calculaCompra());
     }
